@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Closet Sport - Tienda de Ropa Deportiva</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* Botón admin */
+    .admin-link {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #b805f9;
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.3s;
+      z-index: 10;
+    }
+
+    .admin-link:hover {
+      background: #9a04d1;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- BOTÓN ADMIN -->
+  <a href="admin/login.html" class="admin-link">
+    <i class="fas fa-user-shield"></i> Administrador
+  </a>
+
+  <!-- Encabezado -->
+  <header>
+    <div class="header-container">
+      <img src="img/logo.jpg" alt="My Closet Sport" class="logo">
+      <h1>My Closet Sport</h1>
+      <p class="tagline">Tu estilo deportivo, nuestra pasión</p>
+    </div>
+  </header>
+
+  <!-- Navegación -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <button class="nav-btn" onclick="filtrar(null)">
+        <i class="fas fa-home"></i>
+        <span>Todo</span>
+      </button>
+      <button class="nav-btn" onclick="filtrar('mujer')">
+        <i class="fas fa-female"></i>
+        <span>Mujer</span>
+      </button>
+      <button class="nav-btn" onclick="filtrar('hombre')">
+        <i class="fas fa-male"></i>
+        <span>Hombre</span>
+      </button>
+      <button class="nav-btn carrito-btn" onclick="verCarrito()">
+        <i class="fas fa-shopping-cart"></i>
+        <span>Carrito</span>
+        <span class="carrito-badge" id="carrito-count">0</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Contenido principal -->
+  <main>
+    <section class="seccion-titulo">
+      <h2 id="titulo-categoria">Todos los Productos</h2>
+      <p id="productos-count"></p>
+    </section>
+
+    <section id="catalogo" class="catalogo-grid"></section>
+
+    <div id="sin-productos" class="sin-productos oculto">
+      <i class="fas fa-box-open"></i>
+      <p>No hay productos en esta categoría</p>
+    </div>
+
+    <!-- Carrito -->
+    <div id="carrito" class="modal oculto">
+      <div class="modal-overlay" onclick="cerrarCarrito()"></div>
+      <div class="modal-contenido">
+        <div class="modal-header">
+          <h2><i class="fas fa-shopping-cart"></i> Tu Carrito</h2>
+          <button class="btn-cerrar" onclick="cerrarCarrito()">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <div id="items-carrito" class="items-carrito"></div>
+
+        <div id="carrito-vacio" class="carrito-vacio oculto">
+          <i class="fas fa-shopping-bag"></i>
+          <p>Tu carrito está vacío</p>
+        </div>
+
+        <div class="modal-footer">
+          <div class="total-carrito">
+            <span>Total:</span>
+            <span id="total-carrito" class="precio-total">$0</span>
+          </div>
+          <button class="btn-finalizar" onclick="finalizarCompra()">
+            <i class="fab fa-whatsapp"></i>
+            Finalizar compra por WhatsApp
+          </button>
+          <button class="btn-vaciar" onclick="vaciarCarrito()">
+            <i class="fas fa-trash"></i>
+            Vaciar carrito
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>My Closet Sport</h3>
+        <p>
+          La mejor tienda de ropa deportiva para ti<br>
+          "No hacemos clientes, hacemos familia"
+        </p>
+      </div>
+
+      <div class="footer-section">
+        <h3>Contáctanos</h3>
+        <div class="social-links">
+          <a href="https://wa.me/3015198613" target="_blank" class="social-link whatsapp">
+            <i class="fab fa-whatsapp"></i> 301 519 8643
+          </a>
+          <a href="https://instagram.com/myclosetsport_3" target="_blank" class="social-link instagram">
+            <i class="fab fa-instagram"></i> @myclosetsport_3
+          </a>
+          <a href="https://facebook.com/MyClosetSport" target="_blank" class="social-link facebook">
+            <i class="fab fa-facebook"></i> My Closet Sport
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h3>Información</h3>
+        <ul class="footer-links">
+          <li><i class="fas fa-shipping-fast"></i> Envíos a todo el país</li>
+          <li><i class="fas fa-credit-card"></i> Pago contraentrega</li>
+          <li><i class="fas fa-exchange-alt"></i> Cambios y devoluciones</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 My Closet Sport - Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

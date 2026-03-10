@@ -1,0 +1,8 @@
+.then(data => {
+  console.log("Perfil:", data);
+
+  const user = data.user || data;
+
+  document.getElementById("email").textContent = user.email || "No disponible";
+  document.getElementById("role").textContent = user.role || "Sin rol";
+});
