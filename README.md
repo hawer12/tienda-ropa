@@ -1,4 +1,4 @@
-# 👗 Tienda de Ropa 
+#  Tienda de Ropa 
 
 Tienda en línea desarrollada para un negocio real de ropa.
 
@@ -32,5 +32,5 @@ Tienda en línea desarrollada para un negocio real de ropa.
 4. Inicia el servidor
    node index.js
 
-## 📌 Estado
-🚧 En desarrollo
+##  Estado
+ En desarrollo
